@@ -33,3 +33,5 @@ There are lots of great resources available for finding inspiration, examples, a
 * Many people post fresh ideas on [twitter](https://twitter.com/hashtag/d3js)
 * [Thousands of other examples](http://techslides.com/over-2000-d3-js-examples-and-demos) are available too
 * [Here](http://www.janwillemtulp.com/water/)(and [here](http://www.visualcinnamon.com/2015/08/stretched-chord.html), and [here](http://tulpinteractive.com/close-votes/)) are some of my favorites
+
+Feel free to contact me at dkronstal@hitachi-solutions.com if you have any questions.
