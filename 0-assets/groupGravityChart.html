@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+  
+var width = 300;
+var height = 300;
+var nodes = [];
+var sel = "white";
+
+for(var i=0;i<20;i++)
+{
+	nodes[nodes.length]={index:i,x:width/2,y:height/2,fixed:false,weight:0,color:i%2==0?"red":i%3==0?"green":"blue",radius:5};	
+	nodes[nodes.length-1].ox = nodes[nodes.length-1].x;
+	nodes[nodes.length-1].oy = nodes[nodes.length-1].y;
+	nodes[nodes.length-1].px = nodes[nodes.length-1].x*2*Math.sin(i);
+	nodes[nodes.length-1].py = nodes[nodes.length-1].y*2*Math.cos(i);
+	console.log("i: "+i+" cos(i): "+Math.cos(i)+" node.y: "+nodes[nodes.length-1].y+" node.py: "+nodes[nodes.length-1].py);
+}
+
+var viz = d3.select("body")
+			.append("svg")
+			.attr("height",height)
+			.attr("width",width)
+			.on("click",function(d) { 
+				sel = "white"; 
+				force.resume();
+			});
+
+var node = viz.selectAll("circle")
+    .data(nodes)
+  .enter().append("circle")
+  	.style("fill", function(d){ return d.color; })
+    .attr("r", function(d) { return d.radius; })
+	.attr("cx", function(d) { return d.x; })
+  	.attr("cy", function(d) { return d.y; })
+	.on("click",function(d) { 
+		sel = d.color; 
+		force.resume(); 
+		d3.event.stopPropagation();
+	});
+
+var force = d3.layout.force()
+    .nodes(nodes)
+    .size([width, height])
+    .charge(-20)
+    .start();
+	
+force.on("tick", function(e) {
+  var q = d3.geom.quadtree(nodes),
+      i = 0,
+      n = nodes.length;
+
+  while (++i < n) q.visit(collide(nodes[i]));
+
+  var k = 0.25 * e.alpha;
+  nodes.forEach(function (d, i) {
+	  d.y += ((sel == d.color ? d.oy : d.py) - d.y) * k;
+	  d.x += ((sel == d.color ? d.ox : d.px) - d.x) * k;
+	  force.chargeDistance(9999999999);
+  });
+
+  node
+      .attr("cx", function(d) {return d.x;})
+      .attr("cy", function(d) {return d.y;});
+});
+
+node.call(force.drag);
+
+function collide(n) {
+  var r = n.radius + 100,
+      nx1 = n.x - r,
+      nx2 = n.x + r,
+      ny1 = n.y - r,
+      ny2 = n.y + r;
+  return function(quad, x1, y1, x2, y2) {
+    if (quad.point && (quad.point !== n)) {
+      var x = n.x - quad.point.x,
+          y = n.y - quad.point.y,
+          l = Math.sqrt(x * x + y * y),
+          r = n.radius + quad.point.radius;
+      if (l < r) {
+        l = (l - r) / r * 0.5;
+        n.x -= x *= l;
+        n.y -= y *= l;
+        quad.point.x += x;
+        quad.point.y += y;
+      }
+    }
+    return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+  };
+}
+
+</script>

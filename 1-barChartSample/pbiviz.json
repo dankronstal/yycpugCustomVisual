@@ -1,0 +1,23 @@
+{
+  "visual": {
+    "name": "barChartSample",
+    "displayName": "BarChartSample",
+    "guid": "PBI_CV_89D5E7B5_0C9D_4FE2_9D61_1F5BF301FB59",
+    "visualClassName": "Visual",
+    "version": "1.0.0",
+    "description": "",
+    "supportUrl": "",
+    "gitHubUrl": ""
+  },
+  "apiVersion": "1.1.0",
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": [],
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json"
+}

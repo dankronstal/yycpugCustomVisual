@@ -1,0 +1,41 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Categories",
+            "name": "category",
+            "kind": 0
+        },
+        {
+            "displayName": "Measures",
+            "name": "measure",
+            "kind": 1
+        },
+        {
+            "displayName": "Series",
+            "name": "series",
+            "kind": 0
+        }
+    ],
+    "dataViewMappings": [
+    {
+        "categorical": {
+            "categories": {
+                "for": {
+                    "in": "category"
+                }
+            },
+            "values": {
+                "group": {
+                    "by": "series",
+                    "select": [{
+                            "for": {
+                                "in": "measure"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]
+}
