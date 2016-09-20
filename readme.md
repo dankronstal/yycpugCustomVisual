@@ -4,7 +4,7 @@ This repository contains the sample code used during a talk delivered to the [Ca
 
 ##Overview
 
-These folders contain the code for samples derived from and iteratively adding to the [Sample Bar Chart Repo](https://github.com/Microsoft/PowerBI-visuals-sampleBarChart), with the intention of creating a PowerBI chart which replicates and extends my "prototype" chart, the [Group Gravity Chart](http://dankronstal.azurewebsites.net/pbidemo/samples/groupGravity.html). Code for the non-PowerBI version of this prototype is available in the "0-assets" folder.
+These folders contain the code for samples derived from and iteratively adding to the [Sample Bar Chart Repo](https://github.com/Microsoft/PowerBI-visuals-sampleBarChart), with the intention of creating a PowerBI chart which replicates and extends my "prototype" chart, the [Group Gravity Chart](http://dankronstal.azurewebsites.net/pbidemo/samples/groupGravity.html). Code for the non-PowerBI version of this prototype is available in the "0-assets" folder. This example covers only a very basic scenario. For more details please refer to the links at the bottom of this page, or those in the agenda link provided above.
 
 ![](0-assets/groupGravityChartProto.jpg)
 
@@ -32,6 +32,11 @@ There are lots of great resources available for finding inspiration, examples, a
 * [Mike](http://bl.ocks.org/mbostock) [Bostock](https://bost.ocks.org/mike/) is the creator of D3
 * Many people post fresh ideas on [twitter](https://twitter.com/hashtag/d3js)
 * [Thousands of other examples](http://techslides.com/over-2000-d3-js-examples-and-demos) are available too
-* [Here](http://www.janwillemtulp.com/water/)(and [here](http://www.visualcinnamon.com/2015/08/stretched-chord.html), and [here](http://tulpinteractive.com/close-votes/)) are some of my favorites
+* [Here](http://www.janwillemtulp.com/water/) (and [here](http://www.visualcinnamon.com/2015/08/stretched-chord.html), and [here](http://tulpinteractive.com/close-votes/)) are some of my favorites
+
+Developing custom visuals for PowerBI is still a bit of a niche, but a few good resources are available:
+* [PowerBI Visuals](https://github.com/Microsoft/PowerBI-visuals/) tutorial pages - heavily used in the comoposition of these samples
+* [Visuals Core](https://github.com/Microsoft/PowerBI-visuals-core/wiki) repo, for more deep technical samples and code designed to be extended using Visual Studio
+* [Developer community](http://community.powerbi.com/t5/Developer)
 
 Feel free to contact me at dkronstal@hitachi-solutions.com if you have any questions.
