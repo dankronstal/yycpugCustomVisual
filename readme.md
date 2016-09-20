@@ -10,19 +10,19 @@ These folders contain the code for samples derived from and iteratively adding t
 
 The iterations of changes are as follows:
 
-1. Start from the sample repo:
+* Start from the sample repo:
 
 ![](0-assets/barChartSample.jpg)
 
-2. Update from "bar" chart to "ball" chart (SVG rects become SVG circles)
+* Update from "bar" chart to "ball" chart (SVG rects become SVG circles)
 
 ![](0-assets/ballChart.jpg)
 
-3. Update from circle size per group to circle quantity per group
+* Update from circle size per group to circle quantity per group
 
 ![](0-assets/groupGravityChart.jpg)
 
-4. Add circle size (by cost, in my example) per instance (by date, in my example)
+* Add circle size (by cost, in my example) per instance (by date, in my example)
 
 ![](0-assets/groupGravitySizeChart.jpg)
 
